@@ -150,6 +150,14 @@
   /* Reviews */
   .reviews{background:var(--bg-2)}
   .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+  .hn-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .hn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+  .hn-card{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:.2s;background:#fff}
+  .hn-card:hover{border-color:var(--rose);transform:translateY(-4px);box-shadow:var(--shadow)}
+  .hn-meta{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--muted);margin-bottom:10px}
+  .hn-tag{background:var(--rose-soft);color:var(--rose);font-weight:700;padding:3px 10px;border-radius:999px}
+  .hn-card h4{font-size:17px;line-height:1.45;color:var(--navy);flex:1}
+  .hn-card p{font-size:13px;color:var(--muted);margin-top:12px}
   .rev{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);display:flex;flex-direction:column}
   .stars{color:var(--gold);letter-spacing:2px;margin-bottom:12px}
   .rev p{flex:1;margin-bottom:18px}
@@ -204,7 +212,7 @@
     .menu.open{display:flex}
     .burger{display:block}.nav-cta{display:none}
     .hero-grid,.panel.active,.report-grid,.contact-grid{grid-template-columns:1fr}
-    .pain-grid,.prog-grid,.rev-grid{grid-template-columns:1fr}
+    .pain-grid,.prog-grid,.rev-grid,.hn-grid{grid-template-columns:1fr}
     .subj-grid{grid-template-columns:repeat(2,1fr)}
     .steps{grid-template-columns:repeat(2,1fr)}
     .foot-grid{grid-template-columns:1fr 1fr}
@@ -229,6 +237,7 @@
       <a href="#programs">프로그램</a>
       <a href="#subjects">과목·시험</a>
       <a href="#process">수업 방식</a>
+      <a href="news.html">오늘의 뉴스</a>
       <a href="#reviews">수업후기</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -542,6 +551,27 @@
   </div>
 </section>
 
+<!-- ========== NEWS ========== -->
+<section class="home-news" id="news">
+  <div class="wrap">
+    <div class="hn-head">
+      <div>
+        <span class="eyebrow">TODAY'S NEWS</span>
+        <h2 class="title">오늘의 뉴스</h2>
+        <p class="lead">국제학교 · 국제중 · 국제고 · 외고 · 과학고 최신 입시 소식을 요약해 드립니다.</p>
+      </div>
+      <a href="news.html" class="btn btn-outline">뉴스 전체 보기 →</a>
+    </div>
+    <div class="hn-grid">
+      <!--NEWS:START-->
+      <a class="hn-card" href="news.html"><div class="hn-meta"><span class="hn-tag">국제학교</span><time datetime="2026-11-19">2026.11.19</time></div><h4>교육부, 미인가 국제학교 단속 본격화… 20일부터 폐쇄 명령 시작</h4><p>공감신문</p></a>
+      <a class="hn-card" href="news.html"><div class="hn-meta"><span class="hn-tag">국제학교</span><time datetime="2026-11-12">2026.11.12</time></div><h4>전남광주, 삼성전자 요청으로 국제학교 설립 검토 착수</h4><p>아시아경제</p></a>
+      <a class="hn-card" href="news.html"><div class="hn-meta"><span class="hn-tag">국제중</span><time datetime="2026-11-06">2026.11.06</time></div><h4>서울 국제중 경쟁률 18.53대 1… 개교 이래 최고</h4><p>뉴스1</p></a>
+      <!--NEWS:END-->
+    </div>
+  </div>
+</section>
+
 <!-- ========== REVIEWS ========== -->
 <section class="reviews" id="reviews">
   <div class="wrap">
@@ -628,7 +658,7 @@
         <li><a href="#subjects">IB · AP · IGCSE</a></li><li><a href="#subjects">SAT · TOEFL</a></li>
         <li><a href="#subjects">수학 · 과학 심화</a></li><li><a href="#subjects">자기소개서 · 면접</a></li></ul></div>
       <div><h5>고객센터</h5><ul>
-        <li><a href="tel:01029283614">📞 010-2928-3614</a></li><li><a href="sms:01029283614">💬 문자 상담</a></li><li><a href="#kakao" data-kakao>💛 카톡 상담 (ID: skatjdduq21)</a></li><li><a href="#faq">자주 묻는 질문</a></li></ul></div>
+        <li><a href="tel:01029283614">📞 010-2928-3614</a></li><li><a href="sms:01029283614">💬 문자 상담</a></li><li><a href="#kakao" data-kakao>💛 카톡 상담 (ID: skatjdduq21)</a></li><li><a href="news.html">📰 오늘의 뉴스</a></li><li><a href="#faq">자주 묻는 질문</a></li></ul></div>
     </div>
     <div class="foot-bottom">
       상호: 튜터러브 | 대표: 남성엽<br>
