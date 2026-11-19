@@ -6,7 +6,14 @@ $schools = [IO.File]::ReadAllText((Join-Path (Split-Path $Data) 'schools.json'),
 function Esc([string]$s) { return $s.Replace('&','&amp;').Replace('<','&lt;').Replace('>','&gt;').Replace('"','&quot;') }
 New-Item -ItemType Directory -Force $OutDir | Out-Null
 
+$idx = 0
 foreach ($s in $subjects) {
+  $C = @($schools.groupC); $D = @($schools.groupD)
+  $oc = (0..3 | ForEach-Object { '<strong>' + (Esc $C[($idx * 3 + $_) % $C.Count]) + '</strong>' }) -join ', '
+  $od = (0..2 | ForEach-Object { '<strong>' + (Esc $D[($idx * 2 + $_) % $D.Count]) + '</strong>' }) -join ', '
+  $gc = ($C | ForEach-Object { '      <li>' + (Esc $_) + '</li>' }) -join "`n"
+  $gd = ($D | ForEach-Object { '      <li>' + (Esc $_) + '</li>' }) -join "`n"
+  $idx++
   $for = ($s.for | ForEach-Object { '      <div class="for-item"><span class="ck">&#10003;</span><div>' + (Esc $_) + '</div></div>' }) -join "`n"
   $topics = ($s.topics | ForEach-Object {
     $li = ($_.items | ForEach-Object { '<li>' + (Esc $_) + '</li>' }) -join ''
@@ -27,7 +34,7 @@ foreach ($s in $subjects) {
   $ga = ($schools.groupA | ForEach-Object { '      <li>' + (Esc $_) + '</li>' }) -join "`n"
   $gb = ($schools.groupB | ForEach-Object { '      <li>' + (Esc $_) + '</li>' }) -join "`n"
   $desc =(Esc $s.tagline) + ' ' + [char]0xBB34 + [char]0xB8CC + ' ' + [char]0xC0C1 + [char]0xB2F4 + ' 010-2928-3614'
-  $html = $tpl.Replace('{{TITLE}}', (Esc $s.title)).Replace('{{EN}}', (Esc $s.en)).Replace('{{ICON}}', $s.icon).Replace('{{CAT}}', (Esc $s.cat)).Replace('{{TAGLINE}}', (Esc $s.tagline)).Replace('{{INTRO}}', (Esc $s.intro)).Replace('{{FOR}}', $for).Replace('{{TOPICS}}', $topics).Replace('{{FAQ}}', $faq).Replace('{{RELATED}}', $rel).Replace('{{SLUG}}', $s.slug).Replace('{{DESC}}', $desc).Replace('{{SCHOOL_LEAD}}', $lead).Replace('{{GROUP_A}}', $ga).Replace('{{GROUP_B}}', $gb)
+  $html = $tpl.Replace('{{TITLE}}', (Esc $s.title)).Replace('{{EN}}', (Esc $s.en)).Replace('{{ICON}}', $s.icon).Replace('{{CAT}}', (Esc $s.cat)).Replace('{{TAGLINE}}', (Esc $s.tagline)).Replace('{{INTRO}}', (Esc $s.intro)).Replace('{{FOR}}', $for).Replace('{{TOPICS}}', $topics).Replace('{{FAQ}}', $faq).Replace('{{RELATED}}', $rel).Replace('{{SLUG}}', $s.slug).Replace('{{DESC}}', $desc).Replace('{{SCHOOL_LEAD}}', $lead).Replace('{{GROUP_A}}', $ga).Replace('{{GROUP_B}}', $gb).Replace('{{GROUP_C}}', $gc).Replace('{{GROUP_D}}', $gd).Replace('{{OVS_C}}', $oc).Replace('{{OVS_D}}', $od)
   [IO.File]::WriteAllText((Join-Path $OutDir ($s.slug + '.html')), $html, $utf8)
   "built " + $s.slug
 }
