@@ -53,6 +53,12 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdro
 .topic li{padding-left:20px;position:relative}
 .topic li::before{content:"●";color:var(--rose);position:absolute;left:2px;font-size:9px;top:7px}
 
+.schools-sec .intro strong{color:var(--navy);font-weight:700}
+.sg-title{font-size:16px;color:var(--navy);margin:32px 0 12px}
+.school-tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.school-tags li{padding:7px 14px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);font-size:14px;font-weight:500}
+.disc{margin-top:24px;font-size:13px;color:var(--muted)}
+
 .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:36px;counter-reset:s}
 .how{border:1px solid var(--line);border-radius:var(--radius);padding:24px}
 .how::before{counter-increment:s;content:"0" counter(s);font-size:14px;font-weight:900;color:var(--rose)}
