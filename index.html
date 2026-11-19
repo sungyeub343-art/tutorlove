@@ -175,7 +175,8 @@
   .call-card{background:#fff;color:var(--text);border-radius:24px;padding:40px;text-align:center}
   .call-label{font-size:15px;color:var(--muted);font-weight:500}
   .call-number{display:block;font-size:clamp(30px,4.5vw,44px);font-weight:900;color:var(--navy);margin:6px 0 24px;letter-spacing:.02em}
-  .call-btns{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .call-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .btn-kakao{background:#FEE500;color:#191919}.btn-kakao:hover{background:#f5dc00;transform:translateY(-2px)}
   .call-btns .btn{justify-content:center;font-size:18px;padding:18px}
   .sms-tip{margin-top:26px;background:var(--bg-2);border-radius:16px;padding:20px 22px;text-align:left;font-size:15px}
   .sms-tip b{color:var(--navy)}
@@ -193,6 +194,7 @@
   .float-cta{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;gap:10px}
   .float-cta a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:24px;box-shadow:0 8px 20px rgba(0,0,0,.2)}
   .fc-sms{background:var(--navy)}.fc-tel{background:var(--rose);color:#fff}
+  .fc-kakao{background:#FEE500;color:#191919}.float-cta .kk-ic{width:28px;height:28px}
 
   @media(max-width:960px){
     .menu{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;gap:16px;border-bottom:1px solid var(--line)}
@@ -208,6 +210,7 @@
   @media(max-width:560px){
     .subj-grid,.steps,.foot-grid{grid-template-columns:1fr}
     .call-card{padding:28px 20px}
+    .call-btns{grid-template-columns:1fr}
     .panel{padding:24px}
   }
 </style>
@@ -246,6 +249,7 @@
       <div class="hero-btns">
         <a href="tel:01029283614" class="btn btn-primary">📞 전화하기</a>
         <a href="sms:01029283614" class="btn btn-ghost">💬 문자하기</a>
+        <a href="#kakao" class="btn btn-kakao" data-kakao data-kakao-icon>카톡 상담</a>
       </div>
       <a href="tel:01029283614" class="hero-call">무료 상담 <b>010-2928-3614</b></a>
     </div>
@@ -575,9 +579,10 @@
     <div>
       <span class="eyebrow">CONTACT</span>
       <h2 class="title">무료 상담 문의</h2>
-      <p class="lead">전화나 문자로 편하게 연락 주세요. 상담은 부담 없이 무료로 진행됩니다. 통화가 어려우실 땐 문자를 남겨주시면 확인 후 바로 연락드립니다.</p>
+      <p class="lead">전화 · 문자 · 카카오톡으로 편하게 연락 주세요. 상담은 부담 없이 무료로 진행됩니다. 통화가 어려우실 땐 문자나 카톡을 남겨주시면 확인 후 바로 연락드립니다.</p>
       <div class="contact-info">
         <div>📞 <span>010-2928-3614</span></div>
+        <div>💛 <span>카카오톡 ID: skatjdduq21</span></div>
         <div>🕘 <span>평일 10:00 – 22:00 / 주말 10:00 – 18:00</span></div>
       </div>
     </div>
@@ -587,9 +592,10 @@
       <div class="call-btns">
         <a href="tel:01029283614" class="btn btn-primary">📞 전화하기</a>
         <a href="sms:01029283614" class="btn btn-outline">💬 문자하기</a>
+        <a href="#kakao" class="btn btn-kakao" data-kakao data-kakao-icon>카톡 상담</a>
       </div>
       <div class="sms-tip">
-        <b>문자 주실 때 함께 적어주시면 상담이 빨라집니다</b>
+        <b>문자 · 카톡 주실 때 함께 적어주시면 상담이 빨라집니다</b>
         <ul>
           <li>학생 학년 · 학교 (또는 목표 학교)</li>
           <li>희망 과목 · 원하는 수업 요일과 시간</li>
@@ -615,7 +621,7 @@
         <li><a href="#subjects">IB · AP · IGCSE</a></li><li><a href="#subjects">SAT · TOEFL</a></li>
         <li><a href="#subjects">수학 · 과학 심화</a></li><li><a href="#subjects">자기소개서 · 면접</a></li></ul></div>
       <div><h5>고객센터</h5><ul>
-        <li><a href="tel:01029283614">📞 010-2928-3614</a></li><li><a href="sms:01029283614">💬 문자 상담</a></li><li><a href="#faq">자주 묻는 질문</a></li></ul></div>
+        <li><a href="tel:01029283614">📞 010-2928-3614</a></li><li><a href="sms:01029283614">💬 문자 상담</a></li><li><a href="#kakao" data-kakao>💛 카톡 상담 (ID: skatjdduq21)</a></li><li><a href="#faq">자주 묻는 질문</a></li></ul></div>
     </div>
     <div class="foot-bottom">
       상호: 튜터러브 | 대표: 남성엽<br>
@@ -626,6 +632,7 @@
 </footer>
 
 <div class="float-cta">
+  <a href="#kakao" class="fc-kakao" title="카톡 상담" aria-label="카톡 상담" data-kakao data-kakao-icon></a>
   <a href="sms:01029283614" class="fc-sms" title="문자하기">💬</a>
   <a href="tel:01029283614" class="fc-tel" title="전화하기">📞</a>
 </div>
@@ -645,5 +652,6 @@
       document.getElementById('p-'+tab.dataset.t).classList.add('active');
     });
   });</script>
+<script src="/assets/kakao.js" defer></script>
 </body>
 </html>

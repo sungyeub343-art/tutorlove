@@ -99,6 +99,9 @@ footer .logo{color:#fff}
 .float-cta{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;flex-direction:column;gap:10px}
 .float-cta a{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:24px;box-shadow:0 8px 20px rgba(0,0,0,.2)}
 .fc-sms{background:var(--navy)}.fc-tel{background:var(--rose);color:#fff}
+.fc-kakao{background:#FEE500;color:#191919}.float-cta .kk-ic{width:28px;height:28px}
+.btn-kakao{background:#FEE500;color:#191919}.btn-kakao:hover{background:#f5dc00;transform:translateY(-2px)}
+.kakao-id{margin-top:16px;font-size:15px;opacity:.85}.kakao-id b{color:var(--gold)}
 
 @media(max-width:960px){
   .menu{display:none}
