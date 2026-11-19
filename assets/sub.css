@@ -101,7 +101,9 @@ footer .logo{color:#fff}
 .fc-sms{background:var(--navy)}.fc-tel{background:var(--rose);color:#fff}
 .fc-kakao{background:#FEE500;color:#191919}.float-cta .kk-ic{width:28px;height:28px}
 .btn-kakao{background:#FEE500;color:#191919}.btn-kakao:hover{background:#f5dc00;transform:translateY(-2px)}
-.kakao-id{margin-top:16px;font-size:15px;opacity:.85}.kakao-id b{color:var(--gold)}
+.cta-qr{display:inline-flex;align-items:center;gap:18px;margin-top:28px;padding:14px 22px 14px 14px;background:#fff;border-radius:18px;text-align:left;color:var(--text)}
+.cta-qr img{width:120px;height:120px;display:block}
+.cta-qr p{font-size:14px;color:var(--muted);line-height:1.7}.cta-qr b{color:var(--navy);font-size:16px}.cta-qr strong{color:var(--navy)}
 
 @media(max-width:960px){
   .menu{display:none}

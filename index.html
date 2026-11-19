@@ -176,6 +176,9 @@
   .call-label{font-size:15px;color:var(--muted);font-weight:500}
   .call-number{display:block;font-size:clamp(30px,4.5vw,44px);font-weight:900;color:var(--navy);margin:6px 0 24px;letter-spacing:.02em}
   .call-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .qr-box{display:flex;align-items:center;gap:18px;margin-top:22px;padding:16px;border:1.5px solid var(--line);border-radius:16px;text-align:left;background:#fffdf0}
+  .qr-box img{width:128px;height:128px;flex:0 0 128px;display:block}
+  .qr-box b{color:var(--navy);font-size:16px}.qr-box p{color:var(--muted);font-size:14px;margin-top:4px}.qr-box strong{color:var(--navy)}
   .btn-kakao{background:#FEE500;color:#191919}.btn-kakao:hover{background:#f5dc00;transform:translateY(-2px)}
   .call-btns .btn{justify-content:center;font-size:18px;padding:18px}
   .sms-tip{margin-top:26px;background:var(--bg-2);border-radius:16px;padding:20px 22px;text-align:left;font-size:15px}
@@ -593,6 +596,10 @@
         <a href="tel:01029283614" class="btn btn-primary">📞 전화하기</a>
         <a href="sms:01029283614" class="btn btn-outline">💬 문자하기</a>
         <a href="#kakao" class="btn btn-kakao" data-kakao data-kakao-icon>카톡 상담</a>
+      </div>
+      <div class="qr-box">
+        <img src="assets/kakao-qr.png" alt="튜터러브 카카오톡 친구 추가 QR 코드" width="128" height="128">
+        <div><b>카카오톡 QR로 바로 친구 추가</b><p>휴대폰 카메라로 스캔하세요<br>카카오톡 ID <strong>skatjdduq21</strong></p></div>
       </div>
       <div class="sms-tip">
         <b>문자 · 카톡 주실 때 함께 적어주시면 상담이 빨라집니다</b>
